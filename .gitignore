@@ -1,0 +1,34 @@
+# Compiled binaries and build artifacts
+_build/
+*.exe
+*.bc
+*.byte
+*.native
+*.o
+*.cm*
+*.annot
+*.cmt*
+*.a
+*.so
+*.dll
+*.dylib
+
+# Editor and OS-specific files
+*.swp
+*~
+.DS_Store
+
+# Dune generated files
+.dune
+
+# OPAM local switch
+_opam/
+
+# Merlin editor support files
+*.merlin
+.merlin/
+
+# esy build system (if used)
+esy.lock/
+esy.lock.json
+node_modules/
