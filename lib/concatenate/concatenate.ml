@@ -4,7 +4,6 @@
 (* 1 :: (2 :: (3 :: concatenate [] [4; 5; 6])) *)
 (* 1 :: (2 :: (3 :: [4; 5; 6])) *)
 (* [1; 2; 3; 4; 5; 6] *)
-
 let rec concatenate list1 list2 = 
   match list1 with
   | [] -> list2
@@ -17,7 +16,6 @@ let rec concatenate list1 list2 =
 (* aux (2 :: [3; 4; 5; 6]) [1] *)
 (* aux (1 :: [2; 3; 4; 5; 6]) [] *)
 (* aux = [1; 2; 3; 4; 5; 6] *)
-
 let concatenate_tail list1 list2 =
   let rec aux acc list1 =
     match list1 with

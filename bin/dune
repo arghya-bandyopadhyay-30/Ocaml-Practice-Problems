@@ -2,4 +2,4 @@
  (public_name my_project)
  (name main)
  (libraries concatenate print_list reverse is_palindrome custom_map 
-  custom_reduce maximum_number flatten_single_nested))
+  custom_reduce maximum_number flatten_single_nested flatten_arbitrary_nested))

@@ -4,7 +4,6 @@
 (* 1*2 :: (2*2 :: func(x -> x*2) [3]) *)
 (* 1*2 :: (2*2 :: (3*2 :: func(x -> x*2) [])) *)
 (* [2;4;6] *)
-
 let rec custom_map func list =
   match list with
   | [] -> []
@@ -17,7 +16,6 @@ let rec custom_map func list =
 (* (func 2 :: [2]) [3]*)
 (* (func 3 :: [4;2]) []*)
 (* [2;4;6] *)
-
 let custom_map_tail func list =
   let rec aux acc list = 
     match list with
