@@ -5,13 +5,13 @@ let b = [4; 5; 6];;
 let () =
  let result = Concatenate.concatenate a b in
  print_endline "Concatenated List (Without Tail Recursion):";
- Print_list.print_list result
+ Custom_prints.print_list result
 ;;
 
 let () = 
  let result_tail = Concatenate.concatenate_tail a b in
  print_endline "Concatenated List (With Tail Recursion):";
- Print_list.print_list result_tail
+ Custom_prints.print_list result_tail
 ;;
 
 
@@ -21,7 +21,7 @@ let c = [1; 2; 3; 4; 5];;
 let () = 
  let reversed = Reverse.reverse c in
  print_endline "Reversed List:";
- Print_list.print_list reversed
+ Custom_prints.print_list reversed
 ;;
 
 
@@ -49,12 +49,12 @@ let double x = x * 2;;
 let () = 
  let mapped = Custom_map.custom_map double e in
  print_endline "Mapped List using Custom Map (Without Tail Recursion):";
- Print_list.print_list mapped;;
+ Custom_prints.print_list mapped;;
 
 let () =
  let mapped_tail = Custom_map.custom_map_tail double e in
  print_endline "Mapped List using Custom Map (With Tail Recursion):";
- Print_list.print_list mapped_tail
+ Custom_prints.print_list mapped_tail
 ;;
 
 
@@ -101,12 +101,12 @@ let h = [[1; 2]; [3; 4]; [5; 6]];;
 let () = 
  let flattened = Flatten_single_nested.flatten_single_nested h in
  print_endline "Flattened Single Nested List:";
- Print_list.print_list flattened;;
+ Custom_prints.print_list flattened;;
 
 let () = 
  let flattened_tail = Flatten_single_nested.flatten_single_nested_tail h in
  print_endline "Flattened Single Nested List (With Tail Recursion):";
- Print_list.print_list flattened_tail;;
+ Custom_prints.print_list flattened_tail;;
 
 
 (* Question 10: Flatten a multi-nested list *)
@@ -137,5 +137,42 @@ let i = Flatten_arbitrary_nested.List[
 let () =
   let flat = Flatten_arbitrary_nested.flatten_arbitrary_nested i in
   print_endline "Flattened Arbitrary Nested List:";
-  Print_list.print_list flat
+  Custom_prints.print_list flat
+;;
+
+
+(* Question 11: Implement a Dictionary *)
+let d0 = Dictionary.Dictionary.empty;;
+
+let d1 = Dictionary.Dictionary.put "apple" 1 d0;;
+let d2 = Dictionary.Dictionary.put "banana" 2 d1;;
+let d3 = Dictionary.Dictionary.put "cherry" 3 d2;;
+
+let () =
+  print_endline "Dictionary after adding three elements:";
+  Custom_prints.print_dict d3
+;;
+
+let () =
+  let key = "apple" in
+  let value = Dictionary.Dictionary.get key d3 in
+  print_endline (Printf.sprintf "Value for key %s: %d" key value)
+;;
+
+let () =
+  let key = "apple" in
+  let new_value = 4 in
+  let updated_dict1 = Dictionary.Dictionary.put key new_value d3 in
+  print_endline "Dictionary after updating the value for key 'apple':"; 
+  Custom_prints.print_dict updated_dict1
+;;
+
+let () =
+  let key = "banana" in
+  let updated_dict2 = Dictionary.Dictionary.remove key d3 in
+  print_endline "Dictionary after removing the element with key 'banana':"; 
+  Custom_prints.print_dict updated_dict2; 
+  
+  let value = Dictionary.Dictionary.get key updated_dict2 in
+  print_endline (Printf.sprintf "Value for key %s: %d" key value)
 ;;
