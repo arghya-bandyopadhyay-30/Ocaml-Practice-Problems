@@ -141,7 +141,7 @@ let () =
 ;;
 
 
-(* Question 11: Implement a Dictionary *)
+(* Question 11: Implement a Dictionary with put(), get() and remove() functions *)
 let d0 = Dictionary.Dictionary.empty;;
 
 let d1 = Dictionary.Dictionary.put "apple" 1 d0;;
