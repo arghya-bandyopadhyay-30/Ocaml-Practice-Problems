@@ -143,7 +143,6 @@ let () =
 
 (* Question 11: Implement a Dictionary with put(), get() and remove() functions *)
 let d0 = Dictionary.Dictionary.empty;;
-
 let d1 = Dictionary.Dictionary.put "apple" 1 d0;;
 let d2 = Dictionary.Dictionary.put "banana" 2 d1;;
 let d3 = Dictionary.Dictionary.put "cherry" 3 d2;;
@@ -173,6 +172,29 @@ let () =
   print_endline "Dictionary after removing the element with key 'banana':"; 
   Custom_prints.print_dict updated_dict2; 
   
-  let value = Dictionary.Dictionary.get key updated_dict2 in
-  print_endline (Printf.sprintf "Value for key %s: %d" key value)
+  (* let value = Dictionary.Dictionary.get key updated_dict2 in
+  print_endline (Printf.sprintf "Value for key %s: %d" key value) *)
 ;;
+
+
+(* Simplify the expression ((1+2)*3) *)
+let () =
+  let expr = Simplify_eq.Mul(Simplify_eq.Add(Const(1), Const(2)), Const(3)) in
+  Custom_prints.print_expr expr;
+  let simplified_expr = Simplify_eq.simplify_expr expr in
+  print_newline ();
+  Custom_prints.print_expr simplified_expr;
+  print_newline ();
+;;
+
+
+(* Simplify the expression ((1+2)*3) + x *)
+let () =
+  let expr = Simplify_eq.Add(Simplify_eq.Mul(Const(1), Const(2)), Var("x")) in
+  Custom_prints.print_expr expr;
+  let simplified_expr = Simplify_eq.simplify_expr expr in
+  print_newline ();
+  Custom_prints.print_expr simplified_expr;
+  print_newline ();
+;;
+

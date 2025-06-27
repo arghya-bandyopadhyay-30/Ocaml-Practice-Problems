@@ -1,0 +1,43 @@
+type symbolic_expr =
+  | Const of int
+  | Var of string
+  | Add of symbolic_expr * symbolic_expr
+  | Sub of symbolic_expr * symbolic_expr
+  | Mul of symbolic_expr * symbolic_expr
+  | Div of symbolic_expr * symbolic_expr
+;;
+
+(* (1+2)X3 = mul(add(1, 2), 3) *)
+(* simplify(mul(add(1, 2), 3)) = simplify(add(1,2)) * simplify(3) = (simplify(1) + simplify(2)) * simplify(3) = const(9) *)
+let simplify_expr (expr: symbolic_expr) =
+  let rec aux expr =
+    match expr with
+    | Const _ -> expr
+    | Var _ -> expr
+    | Add (e1, e2) ->
+      let s1 = aux e1 in
+      let s2 = aux e2 in
+      (match (s1, s2) with
+       | (Const n1, Const n2) -> Const (n1 + n2)
+       | _ -> Add (s1, s2))
+    | Sub (e1, e2) ->
+      let s1 = aux e1 in
+      let s2 = aux e2 in
+      (match (s1, s2) with
+      | (Const n1, Const n2) -> Const (n1 - n2)
+      | _ -> Sub (s1, s2))
+    | Mul (e1, e2) ->
+      let s1 = aux e1 in
+      let s2 = aux e2 in
+      (match (s1, s2) with
+       | (Const n1, Const n2) -> Const (n1 * n2)
+       | _ -> Mul (s1, s2))
+    | Div (e1, e2) ->
+      let s1 = aux e1 in
+      let s2 = aux e2 in
+      (match (s1, s2) with
+       | (Const n1, Const n2) -> Const (n1 / n2)
+       | _ -> Div (s1, s2))
+  in
+  aux expr
+;;
