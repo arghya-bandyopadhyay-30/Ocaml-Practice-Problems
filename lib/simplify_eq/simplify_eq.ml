@@ -7,6 +7,7 @@ type symbolic_expr =
   | Div of symbolic_expr * symbolic_expr
 ;;
 
+
 (* (1+2)X3 = mul(add(1, 2), 3) *)
 (* simplify(mul(add(1, 2), 3)) = simplify(add(1,2)) * simplify(3) = (simplify(1) + simplify(2)) * simplify(3) = const(9) *)
 let simplify_expr (expr: symbolic_expr) =

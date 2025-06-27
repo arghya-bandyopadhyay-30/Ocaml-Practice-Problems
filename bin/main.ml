@@ -177,7 +177,8 @@ let () =
 ;;
 
 
-(* Simplify the expression ((1+2)*3) *)
+(* Question 12: *)
+(* a. Simplify the expression ((1+2)*3) *)
 let () =
   let expr = Simplify_eq.Mul(Simplify_eq.Add(Const(1), Const(2)), Const(3)) in
   Custom_prints.print_expr expr;
@@ -188,7 +189,7 @@ let () =
 ;;
 
 
-(* Simplify the expression ((1+2)*3) + x *)
+(* b. Simplify the expression ((1+2)*3) + x *)
 let () =
   let expr = Simplify_eq.Add(Simplify_eq.Mul(Const(1), Const(2)), Var("x")) in
   Custom_prints.print_expr expr;
@@ -198,3 +199,90 @@ let () =
   print_newline ();
 ;;
 
+
+(* Question 13: Binary Tree *)
+let binary_tree = Binary_tree.Node(
+  1, 
+  Binary_tree.Node(
+    2, 
+    Binary_tree.Empty, 
+    Binary_tree.Empty
+  ), 
+  Binary_tree.Node(
+    3, 
+    Binary_tree.Node(
+      4, 
+      Binary_tree.Empty, 
+      Binary_tree.Empty
+    ), 
+    Binary_tree.Empty
+  )
+);;
+
+(* a. Print the expression in inorder traversal *)
+let () = 
+  Custom_prints.print_inorder_btree binary_tree;
+  print_newline ()
+;;
+
+(* b. Print the sum of all values in the binary tree *)
+let () = 
+  let tree_sum = Binary_tree.sum_btree binary_tree in
+  print_int tree_sum;
+  print_newline ()
+;;
+
+(* c. Create a new tree with the same original tree, but with each value multiplied by n *)
+let () =
+  let n = 3 in
+  let new_binary_tree = Binary_tree.multiply_by_n binary_tree n in
+  Custom_prints.print_inorder_btree new_binary_tree;
+  print_newline ()
+;;
+
+(* d. Print the height of the tree *)
+let () = 
+  let height = Binary_tree.height_tree binary_tree in
+  print_int height;
+  print_newline ()
+;;
+
+
+(* e. Check if the tree is balanced or not *)
+let () =
+  if Binary_tree.is_balanced_tree binary_tree then
+    print_string "The tree is balanced."
+  else
+    print_string "The tree is not balanced.";
+  print_newline ();
+;;
+
+let disbalanced_binary_tree = Binary_tree.Node(
+  1, 
+  Binary_tree.Node(
+    2, 
+    Binary_tree.Empty, 
+    Binary_tree.Empty
+  ), 
+  Binary_tree.Node(
+    3, 
+    Binary_tree.Node(
+      4, 
+      Binary_tree.Node(
+        5, 
+        Binary_tree.Empty, 
+        Binary_tree.Empty
+      ),
+      Binary_tree.Empty
+    ), 
+    Binary_tree.Empty
+  )
+);;
+
+let () =
+  if Binary_tree.is_balanced_tree disbalanced_binary_tree then
+    print_string "The tree is balanced."
+  else
+    print_string "The tree is not balanced.";
+  print_newline ();
+;;

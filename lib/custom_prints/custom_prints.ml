@@ -51,3 +51,13 @@ let rec print_expr expr =
     print_expr e2;
     Printf.printf ")";
 ;;
+
+
+let rec print_inorder_btree b =
+  match b with
+  | Binary_tree.Empty -> ()
+  | Binary_tree.Node (v, l, r) ->
+      print_inorder_btree l;
+      print_int v;
+      Printf.printf ", ";
+      print_inorder_btree r;
