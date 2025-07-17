@@ -3,4 +3,4 @@
  (name main)
  (libraries concatenate custom_prints reverse is_palindrome custom_map 
   custom_reduce maximum_number flatten_single_nested flatten_arbitrary_nested dictionary
-  simplify_eq binary_tree))
+  simplify_eq binary_tree partition_by_predicate))

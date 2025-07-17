@@ -136,3 +136,11 @@ Also test with an intentionally unbalanced tree.
 
 ---
 
+### **Question 14: Partition a List by Predicate**
+
+Split a list into two lists: one containing elements that satisfy a predicate, and one that doesn’t.
+
+* `partition`
+
+---
+

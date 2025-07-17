@@ -1,0 +1,3 @@
+(library
+ (name partition_by_predicate)
+ (libraries reverse))

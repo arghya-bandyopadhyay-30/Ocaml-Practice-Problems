@@ -286,3 +286,16 @@ let () =
     print_string "The tree is not balanced.";
   print_newline ();
 ;;
+
+
+(* Question 14: Partition a List by Predicate *)
+let is_even x = x mod 2 = 0;;
+let list_to_partition = [1; 2; 3; 4; 5];;
+let () =
+  let true_list, false_list = Partition_by_predicate.partition is_even list_to_partition in
+  print_endline "Partitioned List:";
+  print_string "True List: ";
+  Custom_prints.print_list true_list;
+  print_string "False List: ";
+  Custom_prints.print_list false_list;
+;;
