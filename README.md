@@ -144,3 +144,10 @@ Split a list into two lists: one containing elements that satisfy a predicate, a
 
 ---
 
+### **Question 15: Zip and Unzip**
+
+* Implement `zip` : Pair elements from 2 lists into a list of pairs (e.g., `[1;2]` and `[a;b]` -> `[(1;a); (2;b)]`)
+* Implement `unzip` : Unpair elements from a list of pairs into two lists (e.g., `[(1;a); (2;b)] -> `[1;2]` and `[a;b]`)
+
+---
+

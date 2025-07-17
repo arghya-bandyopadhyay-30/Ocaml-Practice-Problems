@@ -5,13 +5,13 @@ let b = [4; 5; 6];;
 let () =
  let result = Concatenate.concatenate a b in
  print_endline "Concatenated List (Without Tail Recursion):";
- Custom_prints.print_list result
+ Custom_prints.print_list print_int result
 ;;
 
 let () = 
  let result_tail = Concatenate.concatenate_tail a b in
  print_endline "Concatenated List (With Tail Recursion):";
- Custom_prints.print_list result_tail
+ Custom_prints.print_list print_int result_tail
 ;;
 
 
@@ -21,7 +21,7 @@ let c = [1; 2; 3; 4; 5];;
 let () = 
  let reversed = Reverse.reverse c in
  print_endline "Reversed List:";
- Custom_prints.print_list reversed
+ Custom_prints.print_list print_int reversed
 ;;
 
 
@@ -49,12 +49,12 @@ let double x = x * 2;;
 let () = 
  let mapped = Custom_map.custom_map double e in
  print_endline "Mapped List using Custom Map (Without Tail Recursion):";
- Custom_prints.print_list mapped;;
+ Custom_prints.print_list print_int mapped;;
 
 let () =
  let mapped_tail = Custom_map.custom_map_tail double e in
  print_endline "Mapped List using Custom Map (With Tail Recursion):";
- Custom_prints.print_list mapped_tail
+ Custom_prints.print_list print_int mapped_tail
 ;;
 
 
@@ -101,12 +101,12 @@ let h = [[1; 2]; [3; 4]; [5; 6]];;
 let () = 
  let flattened = Flatten_single_nested.flatten_single_nested h in
  print_endline "Flattened Single Nested List:";
- Custom_prints.print_list flattened;;
+ Custom_prints.print_list print_int flattened;;
 
 let () = 
  let flattened_tail = Flatten_single_nested.flatten_single_nested_tail h in
  print_endline "Flattened Single Nested List (With Tail Recursion):";
- Custom_prints.print_list flattened_tail;;
+ Custom_prints.print_list print_int flattened_tail;;
 
 
 (* Question 10: Flatten a multi-nested list *)
@@ -137,7 +137,7 @@ let i = Flatten_arbitrary_nested.List[
 let () =
   let flat = Flatten_arbitrary_nested.flatten_arbitrary_nested i in
   print_endline "Flattened Arbitrary Nested List:";
-  Custom_prints.print_list flat
+  Custom_prints.print_list print_int flat
 ;;
 
 
@@ -295,7 +295,27 @@ let () =
   let true_list, false_list = Partition_by_predicate.partition is_even list_to_partition in
   print_endline "Partitioned List:";
   print_string "True List: ";
-  Custom_prints.print_list true_list;
+  Custom_prints.print_list print_int true_list;
   print_string "False List: ";
-  Custom_prints.print_list false_list;
+  Custom_prints.print_list print_int false_list;
 ;;
+
+
+(* Question 15: Zip and Unzip *)
+let list1 = [1; 2; 3];;
+let list2 = ["a"; "b"; "c"];;
+let () = 
+  let zipped = Zip_unzip.zip list1 list2 in
+  print_endline "Zipped List:";
+  Custom_prints.print_zip print_int print_string zipped
+;;
+
+let list3 = [(1, "a"); (2, "b"); (3, "c")];;
+let () =
+  let lst1, lst2 = Zip_unzip.unzip list3 in
+  print_endline "Unzipped Lists:";
+  Custom_prints.print_list print_int lst1;
+  Custom_prints.print_list print_string lst2;
+;;
+
+

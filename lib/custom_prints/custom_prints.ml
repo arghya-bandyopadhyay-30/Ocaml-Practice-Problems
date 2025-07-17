@@ -1,9 +1,9 @@
-let rec print_list list = 
+let rec print_list print_elem list = 
   match list with
   | [] -> print_endline ""
   | head :: tail -> 
-    print_int head; print_string "; "; 
-    print_list tail
+    print_elem head; print_string "; "; 
+    print_list print_elem tail
 ;;
 
 
@@ -61,3 +61,21 @@ let rec print_inorder_btree b =
       print_int v;
       Printf.printf ", ";
       print_inorder_btree r;
+;;
+
+let print_zip print_elem_1 print_elem_2 list =
+  print_string "[";
+  let rec aux list = 
+    match list with
+    | [] -> ()
+    | (x, y) :: rest ->
+        print_string "(";
+        print_elem_1 x;
+        print_string ", ";
+        print_elem_2 y;
+        print_string "); ";
+        aux rest
+  in
+  aux list;
+  print_endline "]"
+;;
