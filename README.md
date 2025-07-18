@@ -136,7 +136,7 @@ Also test with an intentionally unbalanced tree.
 
 ---
 
-### **Question 14: Partition a List by Predicate**
+## **Question 14: Partition a List by Predicate**
 
 Split a list into two lists: one containing elements that satisfy a predicate, and one that doesn’t.
 
@@ -172,3 +172,4 @@ Extend symbolic expressions to include `let` expressions:
 - Simplify and print the result
 
 ---
+
