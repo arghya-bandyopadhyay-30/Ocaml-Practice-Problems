@@ -1,0 +1,3 @@
+(library
+ (name sliding_window_sum)
+ (libraries reverse))

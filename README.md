@@ -140,7 +140,7 @@ Also test with an intentionally unbalanced tree.
 
 Split a list into two lists: one containing elements that satisfy a predicate, and one that doesn’t.
 
-* `partition`
+* `partition` : Partition of a list into two lists based on a predicate
 
 ---
 
@@ -148,6 +148,15 @@ Split a list into two lists: one containing elements that satisfy a predicate, a
 
 * Implement `zip` : Pair elements from 2 lists into a list of pairs (e.g., `[1;2]` and `[a;b]` -> `[(1;a); (2;b)]`)
 * Implement `unzip` : Unpair elements from a list of pairs into two lists (e.g., `[(1;a); (2;b)] -> `[1;2]` and `[a;b]`)
+
+---
+
+### **Question 16: Sliding Window Sum**
+
+Given a list of integers and a window size `k`, return a list containing the sum of each sliding window of size `k`.
+
+* `sliding_sum` : Compute the sum of each consecutive window in the list
+* `Example`: list = [1; 2; 3; 4; 5] and k = 3 → [(1 + 2 + 3); (2 + 3 + 4); (3 + 4 + 5)] = [6; 9; 12]
 
 ---
 

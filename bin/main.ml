@@ -319,3 +319,11 @@ let () =
 ;;
 
 
+(* Question 16: Sliding Window Sum *)
+let sliding_window_list = [1; 2; 3; 4; 5];;
+let k = 3;;
+let () =
+  let sliding_sums = Sliding_window_sum.sliding_sum sliding_window_list k in
+  print_endline "Sliding Window Sums:";
+  Custom_prints.print_list print_int sliding_sums
+;;
