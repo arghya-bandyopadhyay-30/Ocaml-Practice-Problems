@@ -105,10 +105,10 @@ Perform operations like:
 
 Use symbolic algebra expressions (`Const`, `Var`, `Add`, `Mul`) to simplify:
 
-### a. Expression: `((1 + 2) * 3)`
+### a. Expression: `Mul(Add(Const 1, Const 2), Const 3)` ≡ `((1 + 2) * 3)`
 - Simplify and print the result
 
-### b. Expression: `((1 + 2) * 3) + x`
+### b. Expression: `Add(Mul(Add(Const 1, Const 2), Const 3), Var "x")` ≡ `((1 + 2) * 3) + x`
 - Simplify and print the result
 
 ---
@@ -144,14 +144,14 @@ Split a list into two lists: one containing elements that satisfy a predicate, a
 
 ---
 
-### **Question 15: Zip and Unzip**
+## **Question 15: Zip and Unzip**
 
 * Implement `zip` : Pair elements from 2 lists into a list of pairs (e.g., `[1;2]` and `[a;b]` -> `[(1;a); (2;b)]`)
 * Implement `unzip` : Unpair elements from a list of pairs into two lists (e.g., `[(1;a); (2;b)] -> `[1;2]` and `[a;b]`)
 
 ---
 
-### **Question 16: Sliding Window Sum**
+## **Question 16: Sliding Window Sum**
 
 Given a list of integers and a window size `k`, return a list containing the sum of each sliding window of size `k`.
 
@@ -160,3 +160,15 @@ Given a list of integers and a window size `k`, return a list containing the sum
 
 ---
 
+## **Question 17: Expression Evaluator with Let**
+
+Extend symbolic expressions to include `let` expressions:
+
+### a. Expression: `Let(Var "x", Const 5, Add(Var "x", Const 2))` ≡ `let x = 5 in x + 2`
+- Simplify and print the result
+
+
+### b. Expression: `Let(Var "x", Add(Const 1, Const 2), Mul(Var "x", Const 3))` ≡ `let x = (1 + 2) in x * 3`
+- Simplify and print the result
+
+---

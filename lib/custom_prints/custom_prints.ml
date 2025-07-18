@@ -50,6 +50,13 @@ let rec print_expr expr =
     Printf.printf ", ";
     print_expr e2;
     Printf.printf ")";
+  | Simplify_eq.Let (var, value, exp) ->
+    Printf.printf "Let ";
+    print_expr var;
+    Printf.printf " = ";
+    print_expr value;
+    Printf.printf " in ";
+    print_expr exp;
 ;;
 
 

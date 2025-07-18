@@ -177,13 +177,15 @@ let () =
 ;;
 
 
-(* Question 12: *)
+(* Question 12: Simplify Symbolic Expressions *)
 (* a. Simplify the expression ((1+2)*3) *)
 let () =
   let expr = Simplify_eq.Mul(Simplify_eq.Add(Const(1), Const(2)), Const(3)) in
   Custom_prints.print_expr expr;
+  print_endline "Expression:";
   let simplified_expr = Simplify_eq.simplify_expr expr in
   print_newline ();
+  print_endline "Simplified Expression:";
   Custom_prints.print_expr simplified_expr;
   print_newline ();
 ;;
@@ -193,8 +195,10 @@ let () =
 let () =
   let expr = Simplify_eq.Add(Simplify_eq.Mul(Const(1), Const(2)), Var("x")) in
   Custom_prints.print_expr expr;
+  print_endline "Expression:";
   let simplified_expr = Simplify_eq.simplify_expr expr in
   print_newline ();
+  print_endline "Simplified Expression:";
   Custom_prints.print_expr simplified_expr;
   print_newline ();
 ;;
@@ -326,4 +330,30 @@ let () =
   let sliding_sums = Sliding_window_sum.sliding_sum sliding_window_list k in
   print_endline "Sliding Window Sums:";
   Custom_prints.print_list print_int sliding_sums
+;;
+
+
+(* Question 17: Expression Evaluator with Let *)
+(* a. Simplify the expression: let x = 5 in x + 2 *)
+let () =
+  let expr = Simplify_eq.Let(Var("x"), Const(5), Add(Const(2), Var("x"))) in
+  print_endline "Expression with Let:";
+  Custom_prints.print_expr expr;
+  let simplified_expr = Simplify_eq.simplify_expr expr in
+  print_newline ();
+  print_endline "Simplified Expression:";
+  Custom_prints.print_expr simplified_expr;
+  print_newline ();
+;;
+
+(* b. Simplify the expression: let x = (1 + 2) in x * 3 *)
+let () =
+  let expr = Simplify_eq.Let(Var("x"), Add(Const(1), Const(2)), Mul(Var("x"), Const(3))) in
+  print_endline "Expression with Let:";
+  Custom_prints.print_expr expr;
+  let simplified_expr = Simplify_eq.simplify_expr expr in
+  print_newline ();
+  print_endline "Simplified Expression:";
+  Custom_prints.print_expr simplified_expr;
+  print_newline ();
 ;;
