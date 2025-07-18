@@ -105,10 +105,10 @@ Perform operations like:
 
 Use symbolic algebra expressions (`Const`, `Var`, `Add`, `Mul`) to simplify:
 
-### a. Expression: `Mul(Add(Const 1, Const 2), Const 3)` ≡ `((1 + 2) * 3)`
+* a. Expression: `Mul(Add(Const 1, Const 2), Const 3)` ≡ `((1 + 2) * 3)`
 - Simplify and print the result
 
-### b. Expression: `Add(Mul(Add(Const 1, Const 2), Const 3), Var "x")` ≡ `((1 + 2) * 3) + x`
+* b. Expression: `Add(Mul(Add(Const 1, Const 2), Const 3), Var "x")` ≡ `((1 + 2) * 3) + x`
 - Simplify and print the result
 
 ---
@@ -117,19 +117,19 @@ Use symbolic algebra expressions (`Const`, `Var`, `Add`, `Mul`) to simplify:
 
 Perform various operations on a binary tree:
 
-### a. Inorder Traversal
+* a. Inorder Traversal
 Print the inorder traversal of the tree.
 
-### b. Sum of Tree
+* b. Sum of Tree
 Calculate the sum of all node values.
 
-### c. Multiply Tree Values
+* c. Multiply Tree Values
 Create a new tree with all values multiplied by `n`.
 
-### d. Height of the Tree
+* d. Height of the Tree
 Calculate the height of the tree.
 
-### e. Check for Balance
+* e. Check for Balance
 Check whether the tree is height-balanced.
 
 Also test with an intentionally unbalanced tree.
@@ -164,11 +164,11 @@ Given a list of integers and a window size `k`, return a list containing the sum
 
 Extend symbolic expressions to include `let` expressions:
 
-### a. Expression: `Let(Var "x", Const 5, Add(Var "x", Const 2))` ≡ `let x = 5 in x + 2`
+* a. Expression: `Let(Var "x", Const 5, Add(Var "x", Const 2))` ≡ `let x = 5 in x + 2`
 - Simplify and print the result
 
 
-### b. Expression: `Let(Var "x", Add(Const 1, Const 2), Mul(Var "x", Const 3))` ≡ `let x = (1 + 2) in x * 3`
+* b. Expression: `Let(Var "x", Add(Const 1, Const 2), Mul(Var "x", Const 3))` ≡ `let x = (1 + 2) in x * 3`
 - Simplify and print the result
 
 ---
