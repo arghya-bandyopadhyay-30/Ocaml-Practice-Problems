@@ -17,3 +17,13 @@ let partition func list =
   in
   aux [] [] list
 ;;
+
+let rec partition_without_reverse func list =
+  match list with
+  | [] -> ([], [])
+  | head :: tail ->
+    let (true_list, false_list) = partition_without_reverse func tail in
+    if func head then
+      (head :: true_list, false_list)
+    else
+      (true_list, head :: false_list)

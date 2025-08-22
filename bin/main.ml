@@ -304,6 +304,15 @@ let () =
   Custom_prints.print_list print_int false_list;
 ;;
 
+let () =
+  let true_list, false_list = Partition_by_predicate.partition_without_reverse is_even list_to_partition in
+  print_endline "Partitioned List (Without Reverse):";
+  print_string "True List: ";
+  Custom_prints.print_list print_int true_list;
+  print_string "False List: ";
+  Custom_prints.print_list print_int false_list;
+;;
+
 
 (* Question 15: Zip and Unzip *)
 let list1 = [1; 2; 3];;
